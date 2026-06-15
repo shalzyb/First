@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .greeting {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .message {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .otp-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #f5576c;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .otp-code {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #f5576c;
+            font-family: 'Courier New', monospace;
+        }
+        .otp-expiry {
+            font-size: 14px;
+            color: #f5576c;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #856404;
+        }
+        .footer {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Verify Your Email</h1>
+        </div>
+        <div class="content">
+            <div class="greeting">Hi <%= firstName %> <%= lastName %>,</div>
+            <div class="message">
+                <p>We received a request to verify the email address <strong><%= email %></strong>. Use the code below to complete your verification.</p>
+            </div>
+            
+            <div class="otp-box">
+                <div class="otp-code"><%= otp %></div>
+                <div class="otp-expiry">This code expires in <%= expiryMinutes %> minutes</div>
+            </div>
+
+            <div class="message">
+                <p>Enter this code in the verification window, or click the button below to verify your email instantly.</p>
+            </div>
+
+            <a href="<%= verificationLink %>" style="display: inline-block; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: 600;">Verify Email</a>
+
+            <div class="warning">
+                <strong>⚠️ Security Notice:</strong> Never share this code with anyone. Our team will never ask for this code.
+            </div>
+
+            <div class="message" style="margin-top: 30px; font-size: 14px; color: #888;">
+                <p><strong>Didn't request this?</strong> If you didn't request verification, ignore this email or contact support at support@techyjaunt.com.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2026 TechyJaunt. All rights reserved.</p>
+            <p>This is an automated message. Please do not reply to this email.</p>
+        </div>
+    </div>
+</body>
+</html>
